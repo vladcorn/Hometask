@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hometask</title>
+</head>
+<body>
+<script>
+//buble sort
+    var arr = [2,45,-5,16,-90,72,-5,-14,-22];
+    var endArr= arr.length-1;
+        for (var i = 0; i < endArr; i++){
+
+            for (var j = 0;j < endArr - i; j++){
+
+                if (arr[j] > arr[j+1]){
+                    var swap = arr[j];
+
+                    arr[j] = arr[j+1];
+                    arr[j+1] = swap;
+                }
+
+            }
+
+        }
+
+        console.log(arr);
+
+//count B's
+    function countB(string,char) {
+        var  count=0;
+        for (var i=0;i<string.length-1;i++){
+            if (string[i]== char){
+               count++;
+            }
+        }
+        return count;
+
+    }
+    var stirng ='buble sort is best of the best';
+    var char = 'b';
+    console.log(countB(stirng,char));
+
+    //count sum array
+
+
+    var array = [1,2,[3,[4,9,10,[11,21]]],5,[6,7,8]];
+    var sum = 0;
+
+    for (var i = 0; i<array.length;i++) {
+        if (array[i].length > 1) {
+            for (var j = 0; j < array[i].length; j++) {
+                if (array[i][j].length > 1){
+
+                for (var a = 0; a< array[i][j].length;a++){
+
+                    if (array[i][j][a].length > 1){
+
+                        for (var k  = 0; k < array[i][j][a].length;k++){
+                            sum += array[i][j][a][k];
+                        }
+                    }   else sum += array[i][j][a];}
+                }   else sum += array[i][j];
+            }
+        } else sum += array[i];
+    }
+    console.log(sum);
+
+    sum = 0;
+    array.forEach(function (item1){
+        if (item1 instanceof Array){
+            item1.forEach(function (item2) {
+                if (item2 instanceof Array){
+                    item2.forEach(function (item3) {
+                        if (item3 instanceof Array){
+                            item3.forEach(function (item4) {
+                                sum+= item4;
+
+                            });
+                        }else sum+=item3;
+
+                    });
+                }else sum+=item2;
+
+            });
+        }else sum+=item1;
+
+});
+    console.log(sum);
+
+
+
+
+</script>
+
+</body>
+</html>
