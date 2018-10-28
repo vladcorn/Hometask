@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hometask2</title>
+</head>
+<body>
+<script>
+
+    var obj = {
+        name: 'John',
+        lastname: 'Doe',
+        age: 20,
+        visited:['LA','Rome','Paris'],
+        city:'NY'
+    }
+    for (var property in obj){
+
+        if (property == 'visited'){
+            var x = obj[property];
+        }
+
+    }
+    if(x){
+        console.log(x);
+    }else console.log(false);
+
+
+//
+    var string ='bubble sort is best of the best';
+    var char = 'b';
+    var count=0;
+
+    for (var i=0;i < string.length;i++){
+        if (string[i]== char){
+            count++;
+        }
+    }
+
+
+
+    var fileType = prompt('Put your file neme?','lol.docx');
+
+    var pos = fileType.indexOf('.');
+    console.log(fileType.substring(pos));
+
+
+    var str = "border-left-width";
+    var a = str.replace('left','Left');
+    var b = a.replace('width','Width');
+    var c = b.replace(/-/gi,'');
+    console.log(c);
+
+
+</script>
+</body>
+</html>
