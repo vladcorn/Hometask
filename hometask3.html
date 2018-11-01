@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hometask</title>
+</head>
+<body>
+
+<script>
+
+
+    // Домашнее задание
+
+    //1 написать функцию, которая будет суммировать произвольное количество аргументов. Протестировать на 2, 3 и 5 аргументах
+
+    //2 написать функцию, которая суммировать цифры в числе 456 - 4 +5+6 до тех пор, пока не останется одно число (меньше 10) 56345
+
+    //3 напишите  функции сортировки обьектов юзеров по имени и по возрасту, обьекты лежат в массиве
+
+    //4 функция, которая рекурсивно выводит заданное аргументом число фибоначчи
+
+
+    //1
+    function sumArg() {
+        var sum = 0;
+        for (var i = 0;i<arguments.length;i++) {
+            sum += arguments[i];
+        }
+
+        console.log(sum);
+    }
+
+    //2
+    function sumOfNumbers(num) {
+        var sum = 0;
+        var num1=num;
+        var tmp;
+
+        while (num1){
+
+                tmp = num1%10;
+                num1 = (num1-tmp)/10;
+                sum+=tmp;
+
+        }
+
+
+
+        if (sum>10){
+        while(sum>10){
+
+           sum = sum%10+Math.floor(sum/10);
+        }
+        }
+
+        console.log('Sum of input num ' + num + ' = '+ sum);
+
+    }
+
+
+    //3
+
+    var users = [
+        {   name : 'Vlad',
+            age  : 21
+
+        },
+        {   name : 'John',
+            age  :  9
+        },
+        {   name : 'Nikita',
+            age  :  13
+        },
+        {   name : 'Maks',
+            age  :  20
+        },
+        {   name : 'Arina',
+            age  :  13
+        },
+    ];
+
+    console.log(users.sort  (function (a,b) {
+
+        if (a.name > b.name){return 1;}
+        if (a.name < b.name){return -1;}
+        return 0;
+
+    }));
+//сортирует по имени только если нижняя функция закомментирована
+    console.log(users.sort(function (a,b){
+
+        return ( parseFloat(a.age)- parseFloat(b.age));
+
+    }));
+
+
+
+
+    //4
+    function fib(n){
+        return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+    }
+
+
+
+
+
+
+
+    sumArg(2,3,5,6);
+    sumOfNumbers(98764212);
+    console.log(fib(7));
+
+</script>
+</body>
+</html>
