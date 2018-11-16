@@ -102,24 +102,24 @@
     //countarySalary = function(hourseWorked)
    //get name,set name,get rate,set rate
 
-   /* function Worker(name,rate,hours) {
-        this.name = name;
-        this.rate = rate;
-        this.hours = hours;
-        this.overTime = this.hours - 160;
+    function Worker(name = 'Worker',rate = '12',hours) {
+        this._name = name;
+        this._rate = rate;
+        this._hours = hours;
+        this.overTime = this._hours - 160;
     }
     Worker.prototype.countSalary = function() {
-        this.overTimeSalary = this.overTime * 2 *this.rate;
-        this.salary = this.overTimeSalary + this.rate * this.hours
+        this.overTimeSalary = this.overTime * 2 *this._rate;
+        this.salary = this.overTimeSalary + this._rate * this._hours
 
     }
 var worker = new Worker("Vasya",100,150);
     worker.countSalary();
-console.log(worker.salary);*/
+console.log(worker.salary);
 
 
 
-   function Worker(name = 'Worker',rate = 10){
+  /* function Worker(name = 'Worker',rate = 10){
       var self = this;
       var workerName = name;
       var workerRate = rate;
@@ -179,7 +179,7 @@ console.log(worker.salary);*/
     worker1.setHours(200);
     worker1.setRate(30);
     console.log(worker1.getOverTime());
-    console.log(worker1.getCoutSalary());
+    console.log(worker1.getCoutSalary());*/
 
 
 
