@@ -119,9 +119,11 @@ console.log(worker.salary);*/
 
 
 
-   function Worker() {
+   function Worker(name = 'Worker',rate = 10){
       var self = this;
-      var workerName,workerRate,workerHours,workerOverTime;
+      var workerName = name;
+      var workerRate = rate;
+      var workerHours,workerOverTime;
        self.setName = function (name) {
            if (typeof (name) == 'string') {
                workerName = name;
